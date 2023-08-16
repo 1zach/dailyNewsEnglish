@@ -3,5 +3,6 @@
       <%@blogposts.each do |blog|%>
           <div class="text-lg font-normal"><%=link_to blog.title, blog, class: "no-underline hover:underline"%></div>
           <p><%=blog.body%></p>
+          <p></p>
         <%end%>
 </div>
