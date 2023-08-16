@@ -1,8 +1,18 @@
-<div class="flex flex-col text-center">
+<div class="flex flex-col text-center gap-5">
       <h1 class="font-medium">Latest</h1>
       <%@blogposts.each do |blog|%>
-          <div class="text-lg font-normal"><%=link_to blog.title, blog, class: "no-underline hover:underline"%></div>
-          <p><%=blog.body%></p>
-          <p></p>
+      <div class="flex flex-col gap-2">
+        <div class="text-lg font-normal"><%=link_to blog.title, blog, class: "no-underline hover:underline"%></div>
+        <div><%=blog.body%></div>
+          <% if blog.published?%>
+            <div class="bg-slate-300"><%=blog.published_at.strftime("%B %e, %Y")%></div>
+          <%elsif blog.draft?%>
+            <div class="bg-red-300 rounded-lg">Draft</div>
+          <%elsif blog.scheduled?%>
+            <div class="bg-blue-300 rounded-lg">Scheduled for <%=blog.published_at.strftime("%B %e, %Y")%></div>
+          <%end%>
+          </div>
         <%end%>
-</div>
+        
+        
+  </div>
