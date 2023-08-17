@@ -5,7 +5,7 @@
         <div class="text-lg font-normal"><%=link_to blog.title, blog, class: "no-underline hover:underline"%></div>
         <div><%=blog.body%></div>
           <% if blog.published?%>
-            <div class="bg-slate-300"><%=blog.published_at.strftime("%B %e, %Y")%></div>
+            <div class="bg-slate-300">Published on <%=blog.published_at.strftime("%B %e, %Y")%></div>
           <%elsif blog.draft?%>
             <div class="bg-red-300 rounded-lg">Draft</div>
           <%elsif blog.scheduled?%>
