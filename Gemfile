@@ -80,3 +80,5 @@ gem "devise", "~> 4.9"
 gem "ruby-vips"
 gem "aws-sdk-s3", require: false
 
+
+gem "pagy", "~> 6.0"
